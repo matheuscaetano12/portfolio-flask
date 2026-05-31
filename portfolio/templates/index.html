@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>  <!-- rosto da pagina-->
+    <meta charset="UTF-8">
+    <title>Meu Portfólio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Miranda+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<section class="hero"> <!-- biografia da pagina pricipal-->
+    <div class="text">
+        <h1>Hello </h1>
+        <h2>Eu sou Matheus</h2>
+        <h3>Data Analyst & Developer</h3>
+
+        <a class="button" href="https://github.com/matheuscaetano12" target="_blank">Meus Projetos</a>  
+        
+        <a  class="button" href="{{ url_for('static', filename='pdf/curriculo.pdf') }}" target="_blank">Currículo</a>
+        
+    </div>
+
+    <div class="image-container"> <!-- Imagem principal -->
+        <img src="{{ url_for('static', filename='img/img2_principal.png') }}" alt="foto" class="profile-img">
+    </div>
+</section>
+
+<section class="about"> 
+    <h2>Sobre mim</h2>
+    <p class="bio">{{bio | safe}}</p>
+
+   
+</section>
+
+<section class="projects">
+    <h2>Projetos</h2>
+
+    <div class="cards">
+
+  <div class="card">
+    <img class="img" src="{{ url_for('static', filename='img/Dashbordy.png') }}">
+    <h3>Dashboard Vendas</h3>
+  </div>
+
+  <div class="card">
+    <img class="img" src="{{ url_for('static', filename='img/python.jpg') }}">
+    <h3>Análise Python</h3>
+  </div>
+
+  <div class="card">
+    <img class="img" src="{{ url_for('static', filename='img/Projeto_SQL.png') }}">
+    <h3>Projeto SQL</h3>
+  </div>
+
+</div>
+
+</section>
+
+<section class="powerbi">
+    <h2>Dashboard Power BI</h2>
+
+    <iframe width="100%" height="500"
+        src="https://app.powerbi.com/view?r=SEU_LINK_AQUI"
+        frameborder="0">
+    </iframe>
+</section>
+
+</body>
+</html>
